@@ -1,0 +1,9 @@
+[Connection: close]
+[User-Agent: Tank]
+[Content-type: application/json]
+350 /graphql
+{"query":"query Query($sessionId: String!) {\n  order(sessionId: $sessionId) {\n    id\n    completed\n    created\n    sessionId\n    number\n    items {\n      id\n      quantity\n      product {\n        id\n        title\n        description\n        shopId\n      }\n    }\n  }\n}\n","variables":{"sessionId":"qwernull"},"operationName":"Query"}
+588 /graphql
+{"query":"mutation CreateOrder($urlHash: String!, $sessionId: String!, $items: [OrderItemInput]!) {\n  createOrder(urlHash: $urlHash, sessionId: $sessionId, items: $items) {\n    id\n    number\n    completed\n    modify\n    sessionId\n    items {\n      id\n      product {\n        id\n      }\n      quantity\n    }\n    shop {\n      contact\n      id\n      products {\n        id\n        title\n      }\n    }\n  }\n}\n","variables":{"urlHash":"w3bxye8","sessionId":"qwernull","items":[{"productId":"1","quantity":1},{"productId":"2","quantity":2}]},"operationName":"CreateOrder"}
+250 /graphql
+{"query":"mutation CreateShopMutation {\n  createShop {\n    id\n    urlHash\n    editHash\n    name\n    created\n    modify\n    contact\n    products {\n      id\n      created\n    }\n  }\n}\n","variables":{},"operationName":"CreateShopMutation"}

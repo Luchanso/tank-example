@@ -1,0 +1,13 @@
+phantom:
+  address: xxx.xxx.xxx.xxx:80 # :9000 for images
+  # uris:
+  #   - /graphql
+  load_profile:
+    load_type: rps # schedule load by defining requests per second
+    schedule: line(5, 100, 10m) # starting from 1rps growing linearly to 10rps during 10 minutes
+  ammo_type: uripost
+  ammofile: ammo.txt
+console:
+  enabled: true # enable console output
+telegraf:
+  enabled: false # let's disable telegraf monitoring for the first time
